@@ -1,16 +1,19 @@
 # DataAnalytics
 
 0.1 Introducción
+
 En el mundo, cada vez nos vemos más abrumados por los datos. Con datos en cada uno de
 los dispositivos que manejamos diariamente, datos dentro de la web y la nube. Conforme esta
 cantidad aumenta, las oportunidades para obtener información útil de los datos también. No solo
 es acerca de observar los datos, es sobre lo que estos nos pueden decir sobre quienes o las cosas
 que los generan.
+
 Hoy en día podemos encontrar información sobre las técnicas de análisis de datos, conocimiento
 que nos permitirá no solo poder obtener oportunidades de aprovechamiento con los datos, si no
 también de conocer las mejores maneras de generar la información y utilizarla.
 Por ende, se recomienda tener un acercamiento hacia la técnicas de análisis de datos, lo cual se
 comienza con este escrito. [1]
+
 En este reporte, se pueden encontrar algoritmos generalizados para utilizar con cualquier base de
 datos y poder extraer así sus primeras características para el análisis. Además, de encontrar un
 par de técnicas correctivas que ayudarán a mejorar la base de datos que se ingresa.
