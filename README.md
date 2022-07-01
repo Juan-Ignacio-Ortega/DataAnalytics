@@ -1,208 +1,118 @@
 # DataAnalytics
+## 0 - Code and description
+
+### Code
+https://github.com/Juan-Ignacio-Ortega/DataAnalytics/blob/main/DataAnalyticsCode_JIOG.py
+
+### Description
+https://github.com/Juan-Ignacio-Ortega/DataAnalytics/blob/main/DataAnalyticsDescription_JIOG.ipynb
+
+## 1 - Introduction
+
+In the world, we are increasingly overwhelmed by data. With data on each of the devices we handle daily, data within the web and the cloud. As this information increases, so do the opportunities to gain insights from the data. It's not just about looking at the data, it's about what it can tell us about who or what is generating it.
+Today we can find information on data analysis techniques, knowledge that will allow us not only to obtain opportunities to take advantage of data, but also to know the best ways to generate information and use it.
+Finally, it is recommended to have an approach towards data analysis techniques, which begins with this writing. [1]
+In this report, you can find generalized algorithms for use with any database to extract its first features for analysis. In addition, to find a couple of corrective techniques that will help improve the database that is entered.
+
+## 2 - Methodology
+
+STATISTICAL DEFINITIONS
+
+• The sample mean (Average)
+Indicates the center of the data.
+Average = (1 / n) * sum of Xi [2]
+• Deviations ((X1 - Xaverage), . . . , (Xn - Xaverage)) Distances of each sample value from the sample mean. Being a subtraction, it generates both positive and negative values, so it is squared when used in the variance and standard deviation, to make all subtraction results positive.
+• Sample variance This is the average of the squared deviations, except that we divide it by n-1 instead of n.
+s2 = (1 / (n - 1)) * sum of ((Xi - Xaverage)2) [2]
+• Standard deviation Measures the degree of dispersion.
+s = (s2)1 / 2 or square root of s2 [2]
+• Quartiles
+The median divides the sample in half, the quartiles divide it, as much as possible, into fourths.
+First quartile = 0.25 (n + 1) [2]
+Second quartile = 0.5 (n + 1) [2] –> Identical to the median
+Third quartile = 0.75 (n + 1) [2]
+The result tells you the number of the value that represents the X quartile, of the data ordered in ascending order.
+Only if the result is an integer, otherwise the average of the sample values ​​on either side of this value is taken, sampling in ascending order.
+• Covariance
+It is a measure of the strength of the relationship between two random variables [2].
+cov(X, Y) = average((Xi - average of X) * (Yi - average of Y)) [2]
+
+CONCEPTS IN DATA MANAGEMENT
+
+• Instances
+Each instance is characterized by the values ​​of the attributes that measure different aspects for each measurement. If we see it in the sense of a database, the instances would be the records of this, that is, the rows.
+• Attributes
+If we see it as a database, the attributes would be the equivalent of the columns. The value of an attribute for a particular instance is the measure of the quantity to which the attribute refers.
+• Attribute classification
+
+-Categorical attribute:
+Categorical (qualitative): represent categories rather than numbers. They are further divided into:
+Nominal: they have no significant order.
+Ordinals: they have a definite order.
+
+-Number attribute:
+Numerical (quantitative): they are attributes that are numbers, they are divided in turn into:
+Interval: there is no .
+Rate: zero exists.
+Discrete attribute: Has a finite or countable number of values.
+Continuous attribute: It has an infinite number of possible values.
+
+• Types of distribution according to histograms
+Uniform Histogram
+Normal Histogram (Unimodal)
+Left skewed Unimodal Histogram
+Right skewed Unimodal Histogram
+Multimodal Histogram
+exponential histogram
+• Data quality problem any unusual data found in the database.
+The most common data problems are:
+Missing values.
+Irregular cardinality problems. It occurs when a feature has data that is not what would be expected from a feature.
+
+Outliers outliers.
+Values ​​that are located very far from the central tendency of a characteristic. It can be categorized into valid and invalid [1].
+
+• Balance between classes
+It seeks to have the same number of examples for each class.
+• Normalize the data
+Some AI algorithms require all data to be centered in a specific range of values, typically -1 to 1 or 0 to 1. Even if data is not required to be within values, it is generally a good idea to make sure the values ​​are within a specific range.
+
+Normalization of ordinal values
+To normalize an ordinal set, you have to preserve the order.
+
+Normalization of quantitative values
+The first thing you have to do is observe the range in which these values ​​are found and the interval to which you want to normalize. Not all values ​​need to be normalized.
+
+It is necessary to perform the calculations of the following variables to find the normalized value:
+-Maximum of the data = the highest value of the observation without normalizing [1].
+-Minimum of the data = the smallest height of the observation without normalizing [1].
+-Maximum normalized = the highest bound value to which the maximum of the data will be normalized [1].
+-Minimum normalized = the lowest bounding value to which the minimum of the data will be normalized [1].
+-Data range = Maximum of the data - Minimum of the data [1].
+-Normalized range = Normalized maximum - Normalized minimum [1].
+-D = Value to normalize - Minimum of the data [1].
+-DPct = D / Data range [1].
+-dNorm = Normalized Range * DPct [1].
+-Normalized = Minimum normalized + dNorm [1].
+
+In this way, the normalized value is obtained.
+• Data imputation
+
+In data science, there are usually two approaches to dealing with these missing values:
+omit instances with missing values ​​or perform imputation techniques and estimate missing data using existing values.
 
-0.1 Introducción
+Imputation is a technique for replacing missing values ​​with values ​​that are found. The objective is to have a database with the least amount of missing instances that contain the same distribution as the existing data so that they can be analyzed.
+Deterministic imputation techniques They work when, according to the same conditions of the data, they produce the same answers. Among these techniques is imputation by
+nearest neighbor.
+Imputation by nearest neighbor: The distance between the instance to be imputed is calculated, usually by means of the Euclidean distance and the data that has an established value. Once the closest data is calculated, it is used to impute the missing instance.
 
-En el mundo, cada vez nos vemos más abrumados por los datos. Con datos en cada uno de
-los dispositivos que manejamos diariamente, datos dentro de la web y la nube. Conforme esta
-cantidad aumenta, las oportunidades para obtener información útil de los datos también. No solo
-es acerca de observar los datos, es sobre lo que estos nos pueden decir sobre quienes o las cosas
-que los generan.
+• Euclidean distance
 
-Hoy en día podemos encontrar información sobre las técnicas de análisis de datos, conocimiento
-que nos permitirá no solo poder obtener oportunidades de aprovechamiento con los datos, si no
-también de conocer las mejores maneras de generar la información y utilizarla.
-Por ende, se recomienda tener un acercamiento hacia la técnicas de análisis de datos, lo cual se
-comienza con este escrito. [1]
+The Euclidean distance is based on the two-dimensional distance between two vectors. That is, the distance between two points as if a line were drawn with a ruler from one point to another. Specifically, if there are two points (x1, y1) and (x2, y2), the Euclidean distance can be calculated using the equation [1]:
 
-En este reporte, se pueden encontrar algoritmos generalizados para utilizar con cualquier base de
-datos y poder extraer así sus primeras características para el análisis. Además, de encontrar un
-par de técnicas correctivas que ayudarán a mejorar la base de datos que se ingresa.
+d = square root((x2 - x1)ˆ2 + (y2 - y1)ˆ2) [1]
 
-0.2 Metodología
-
-DEFINICIONES ESTADÍSTICAS
-
-• La media muestral (Promedio)
-
-Indica el centro de los datos.
-
-Promedio = (1 / n) * sumatoria de Xi [2]
-
-• Desviaciones ((X1 - Xpromedio), . . . , (Xn - Xpromedio)) 
-
-Distancias de cada valor de la muestra a la media de la muestra. Al ser una resta, genera valores tanto positivos como negativos,
-por eso se eleva al cuadrado al utilizarse en la varianza y en la desviación estándar, para hacer todos los resultados de la resta positivos.
-
-• Varianza muestral Constituye el promedio de las desviaciones al cuadrado, excepto que lo
-dividimos entre n-1 en lugar de n.
-
-s2 = (1 / (n - 1)) * sumatoria de ((Xi - Xpromedio)2) [2]
-
-• Desviación estándar Mide el grado de dispersión.
-
-s = (s2)1 / 2 o raíz cuadrada de s2 [2]
-
-• Cuartiles
-
-La mediana divide la muestra a la mitad, los cuartiles lo dividen, tanto como sea posible, en
-cuartos.
-
-Primer cuartil = 0.25 (n + 1) [2]
-
-Segundo cuartil = 0.5 (n + 1) [2] –> Idéntico a la mediana
-
-Tercer cuartil = 0.75 (n + 1) [2]
-
-El resultado te dice el número del valor que representa el X cuartil, de los datos ordenados de
-forma ascendente.
-
-Solo si el resultado es un entero, si no, se toma el promedio de los valores de la muestra de
-cualquier lado de este valor, tomando la muestra de forma ordenada ascendente.
-
-• Covarianza
-
-Es una medida de la intensidad de la relación entre dos variables aleatorias [2].
-
-cov(X, Y) = promedio((Xi - promedio de X) * (Yi - promedio de Y)) [2]
-
-CONCEPTOS EN EL MANEJO DE DATOS
-
-• Instancias
-
-Cada instancia se caracteriza por los valores de los atributos que miden diferentes aspectos
-por cada medición. Si lo vemos en el sentido de una base de datos, las instancias serían los
-registros de esta, es decir, las filas.
-
-• Atributos
-
-Si lo vemos como una base de datos, los atributos serían el equivalente a las columnas. El
-valor de un atributo para una particular instancia es la medición de la cantidad a la cual el
-atributo se refiere.
-
-• Clasificación de atributos
-
--Atributo categórico:
-
-Categóricos ( cualitativos): representan categorías más que números. Se dividen a su vez en:
-
-Nominales: no tienen orden significativo.
-
-Ordinales: tienen orden definido.
-
--Atributo numérico:
-
-Numéricos(cuantitativos): son atributos que son núemros, se dividen a su vez en:
-
-Intervalo: no existe un .
-
-Tasa: el cero existe.
-
-Atributo discreto: Tiene un número finito o contable de valores.
-
-Atributo continuo: Tiene un número infinito de valores posibles.
-
-• Tipos de distribución según histogramas
-
-Histograma Uniforme
-
-Histograma Normal (Unimodal)
-
-Histograma Unimodal sesgado izquierda
-
-Histograma Unimodal sesgado derecha
-
-Histograma multimodal
-
-Histograma exponencial
-
-• Problema de calidad en los datos cualquier dato inusual que se encuentre en la base de datos.
-
-Los problemas más comunes de los datos son:
-
-Valores faltantes.
-
-Problemas de cardinalidad irregular. Se da cuando una característica tiene un dato que no es lo
-que se esperaría de una característica.
-
-Valores atípicos outliers. Valores que se localizan muy alejados de la tendencia central de una
-característica. Se puede categorizar en válidos y no válidos [1].
-
-• Balance entre clases
-
-Se busca tener la misma cantidad de ejemplos por cada clase.
-
-• Normalizar los datos
-
-Algunos algoritmos de inteligencia artificial requieren que todos los datos se centren en un rango
-específico de valores, normalmente de -1 a 1 o de 0 a 1. Incluso si no se requiere que los datos se
-encuentren dentro de los valores, es buena idea generalmente asegurarse de que los valores se
-encuentran dentro de un rango específico.
-
-Normalización de valores ordinales
-
-Para normalizar un set ordinal, se tiene que preservar el orden.
-
-Normalización de valores cuantitativos
-
-Lo primero que se tiene que hacer es observar el rango en el cual se encuentran dichos valores y
-el intervalo al que se quiere normalizar. No todos los valores requieren ser normalizados.
-
-Es necesario realizar los cálculos de las siguientes variables para encontrar el valor normalizado:
-
--Máximo de los datos = el valor más alto de la observación sin normalizar. [1]
-
--Mínimo de los datos = el menor alto de la observación sin normalizar. [1]
-
--Máximo normalizado = el valor más alto limítrofe al que el máximo de los datos será normalizado.
-[1]
-
--Mínimo normalizado = el valor más bajo limítrofe al que el mínimo de los datos será normalizado.
-[1]
-
--Rango de datos = Máximo de los datos - Mínimo de los datos [1]
-
--Rango normalizado = Máximo normalizado - Mínimo normalizado [1]
-
--D = Valor a normalizar - Mínimo de los datos [1]
-
--DPct = D / Rango de datos [1]
-
--dNorm = Rango normalizado * DPct [1]
-
--Normalizado = Mínimo normalizado + dNorm [1]
-
-De esta forma se obtiene el valor normalizado.
-
-• Imputación de los datos
-
-En ciencia de datos, usualmente, se tienen dos enfoques para lidiar con estos valores faltantes:
-omitir las instancias con valores faltantes o realizar técnicas de imputación y estimar los datos
-faltantes utilizando los valores existentes.
-
-La imputación es una técnica para reemplazar valores perdidos con valores que se encuentran.
-
-El objetivo es la de tener una base de datos con la menor cantidad de instancias faltantes que
-contengan la misma distribución que lo datos existentes para que puedan ser analizados.
-
-Técnicas determínisticas de imputación 
-
-Funcionan cuando, de acuerdo a las mimas condiciones de los datos, producen las mismas respuestas. 
-Entre estas técnicas se encuentra la imputación por vecino más cercano.
-
-Imputación por vecino más cercano: 
-
-Se calcula la distancia entre la instancia a imputar, usualmente, por medio de la distancia euclidiana y los datos que tienen valor establecido.
-Una vez que se calcula el dato más cercano, se utiliza este para imputar la instancia faltante.
-
-• Distancia euclidiana
-
-La distancia euclidiana está basada en la distancia bidimensional entre dos vectores. Esto es, la
-distancia entre dos puntos como si se dibujara una línea con una regla de un punto a otro. Específicamente,
-si se tienen dos punto (x1, y1) y (x2, y2), la distancia euclidiana puede ser calculada mediante la ecuación [1]:
-
-d = raíz cuadrada((x2 - x1)ˆ2 + (y2 - y1)ˆ2) [1]
-
-0.3 Referencias
+## 3 - References
 
 [1] M. A. Aceves Fernández, Inteligencia Artificial para programadores con prisa. UNIVERSO de
 LETRAS, 2021.
