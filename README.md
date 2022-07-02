@@ -1,5 +1,5 @@
 # DataAnalytics
-## 0 - Code and description
+## 1 - Code and description
 
 ### Code
 https://github.com/Juan-Ignacio-Ortega/DataAnalytics/blob/main/DataAnalyticsCode_JIOG.py
@@ -7,14 +7,14 @@ https://github.com/Juan-Ignacio-Ortega/DataAnalytics/blob/main/DataAnalyticsCode
 ### Description
 https://github.com/Juan-Ignacio-Ortega/DataAnalytics/blob/main/DataAnalyticsDescription_JIOG.ipynb
 
-## 1 - Introduction
+## 2 - Introduction
 
 In the world, we are increasingly overwhelmed by data. With data on each of the devices we handle daily, data within the web and the cloud. As this information increases, so do the opportunities to gain insights from the data. It's not just about looking at the data, it's about what it can tell us about who or what is generating it.
 Today we can find information on data analysis techniques, knowledge that will allow us not only to obtain opportunities to take advantage of data, but also to know the best ways to generate information and use it.
 Finally, it is recommended to have an approach towards data analysis techniques, which begins with this writing. [1]
 In this report, you can find generalized algorithms for use with any database to extract its first features for analysis. In addition, to find a couple of corrective techniques that will help improve the database that is entered.
 
-## 2 - Methodology
+## 3 - Methodology
 
 STATISTICAL DEFINITIONS
 
@@ -112,7 +112,7 @@ The Euclidean distance is based on the two-dimensional distance between two vect
 
 d = square root((x2 - x1)ˆ2 + (y2 - y1)ˆ2) [1]
 
-## 3 - References
+## 4 - References
 
 [1] M. A. Aceves Fernández, Inteligencia Artificial para programadores con prisa. UNIVERSO de
 LETRAS, 2021.
